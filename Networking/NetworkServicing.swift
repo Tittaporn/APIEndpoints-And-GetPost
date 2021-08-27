@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum NetworkError: LocalizedError {
     case invalidURL
     case thrownError(Error)
@@ -92,5 +91,67 @@ class NetworkServicing {
                 completion(.failure(.unableToDecode))
             }
         }.resume()
+    }
+    
+    func fetchPostSynchronous() -> [Post] {
+        var nReturnPost: [Post] = []
+        let request = URLRequest(url: PostServiceEndPoint.getPosts.url!)
+        let (data, response, error) = URLSession.shared.synchronousDataTask(urlrequest: request)
+        if let error = error {
+            print("Synchronous task ended with error: \(error)")
+        }
+        else {
+            print("Synchronous task ended without errors.")
+        }
+        if let response = response as? HTTPURLResponse {
+            print("=================== Response :\(response.statusCode)====================== at \(#line) \(#function)")
+        }
+        if let data = data {
+            do {
+                let nReturnVal = try JSONDecoder().decode([Post].self, from: data)
+                print("=================== Decode ======================\(#line) \(#function)")
+                print(String(data: data, encoding: .utf8)!)
+                nReturnPost = nReturnVal
+            } catch {
+                nReturnPost = []
+            }
+        }
+        return nReturnPost
+    }
+    
+    func fetchTSynchronous<T: Codable>(endpoint: URL?) -> T? {
+        
+        var nReturnT: T?
+        guard let url = endpoint else {
+            print(NetworkError.invalidURL)
+            return nil
+        }
+        let request = URLRequest(url: url)
+        let (data, response, error) = URLSession.shared.synchronousDataTask(urlrequest: request)
+        if let error = error {
+            print(NetworkError.thrownError(error))
+            print("Synchronous task ended with error: \(error)")
+        } else {
+            print("Synchronous task ended without errors.")
+        }
+        
+        if let response = response as? HTTPURLResponse {
+            print("=================== Response :\(response.statusCode)====================== at \(#line) \(#function)")
+        }
+        if let data = data {
+            do {
+                let nReturnVal = try JSONDecoder().decode(T.self, from: data)
+                print("=================== Decode ======================\(#line) \(#function)")
+                print(String(data: data, encoding: .utf8)!)
+                nReturnT = nReturnVal
+            } catch {
+                print(NetworkError.unableToDecode)
+                nReturnT = nil
+            }
+        } else {
+            print(NetworkError.noData)
+            nReturnT = nil
+        }
+        return nReturnT
     }
 }

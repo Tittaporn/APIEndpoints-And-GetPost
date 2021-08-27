@@ -17,6 +17,8 @@
 		169659E726BCE2C600FA1141 /* PostServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169659E626BCE2C500FA1141 /* PostServiceEndPoint.swift */; };
 		169659EC26BCEB0E00FA1141 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169659EB26BCEB0E00FA1141 /* Post.swift */; };
 		169659F026BCEB5C00FA1141 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169659EF26BCEB5C00FA1141 /* PostController.swift */; };
+		16C7AB6326D8ACE500D4A2E1 /* SynchronousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7AB6226D8ACE500D4A2E1 /* SynchronousViewController.swift */; };
+		16C7AB6626D8AED500D4A2E1 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7AB6526D8AED500D4A2E1 /* URLSessionExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		169659E626BCE2C500FA1141 /* PostServiceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceEndPoint.swift; sourceTree = "<group>"; };
 		169659EB26BCEB0E00FA1141 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		169659EF26BCEB5C00FA1141 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		16C7AB6226D8ACE500D4A2E1 /* SynchronousViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronousViewController.swift; sourceTree = "<group>"; };
+		16C7AB6526D8AED500D4A2E1 /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				169659E626BCE2C500FA1141 /* PostServiceEndPoint.swift */,
 				169659EB26BCEB0E00FA1141 /* Post.swift */,
 				169659EF26BCEB5C00FA1141 /* PostController.swift */,
+				16C7AB6226D8ACE500D4A2E1 /* SynchronousViewController.swift */,
+				16C7AB6526D8AED500D4A2E1 /* URLSessionExtension.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 				169659CF26BCE19F00FA1141 /* AppDelegate.swift in Sources */,
 				169659D126BCE19F00FA1141 /* SceneDelegate.swift in Sources */,
 				169659EC26BCEB0E00FA1141 /* Post.swift in Sources */,
+				16C7AB6326D8ACE500D4A2E1 /* SynchronousViewController.swift in Sources */,
+				16C7AB6626D8AED500D4A2E1 /* URLSessionExtension.swift in Sources */,
 				169659F026BCEB5C00FA1141 /* PostController.swift in Sources */,
 				169659E426BCE20600FA1141 /* NetworkServicing.swift in Sources */,
 				169659E726BCE2C600FA1141 /* PostServiceEndPoint.swift in Sources */,
