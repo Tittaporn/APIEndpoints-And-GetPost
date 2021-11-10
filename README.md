@@ -1,5 +1,5 @@
 # APIEndpoints-And-GetPost
-This respository is for API Endpoint by enum and fetch and post functions for API call in swift and xcode.
+This respository is for API Endpoint by enum and fetch and post functions, also included extension for synchronous api call in swift and xcode. 
 
 ## Source
 - https://swiftbysundell.com/clips/4/
