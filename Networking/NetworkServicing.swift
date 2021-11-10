@@ -31,7 +31,6 @@ enum NetworkError: LocalizedError {
 }
 
 class NetworkServicing {
-    
     static let shared = NetworkServicing()
     
     func fetch<T: Decodable>(endpoint: URL?, completion: @escaping (Result<T, NetworkError>) -> Void) {
